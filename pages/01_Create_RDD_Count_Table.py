@@ -629,3 +629,14 @@ if "rdd" in st.session_state:
     st.markdown("---")
     st.markdown("### 🔢 RDD Count Table Preview")
     st.dataframe(rdd.counts.head(15))
+
+    # Download button for RDD counts
+    counts_csv = rdd.counts.to_csv(index=False)
+    st.download_button(
+        label="📥 Download Complete RDD Counts Table",
+        data=counts_csv,
+        file_name="rdd_counts_table.csv",
+        mime="text/csv",
+        help="Download the complete RDD counts table as CSV",
+        key="download_rdd_counts",
+    )
