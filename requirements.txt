@@ -12,11 +12,11 @@ scikit-bio>=0.7.1   # CLR transformation
 
 # ───────── GNPS data access ─────────
 gnpsdata @ git+https://github.com/Wang-Bioinformatics-Lab/GNPSDataPackage.git@f4ca8d9b7fab87823179b122b7e4a0a0b62e9d65
-gnps-rdd @ git+https://github.com/bittremieuxlab/gnps-rdd.git@review/manuscript-revisions
+gnps-rdd @ git+https://github.com/bittremieuxlab/gnps-rdd.git
 
 # ───────── optional / indirect ─────────
 # pyarrow is auto-installed by pandas ≥2 for fast parquet/feather,
 # but including it avoids the "optional dependency" warning.
 pyarrow>=15.0
 # ─── new line ───
-setuptools>=68.0    
+setuptools<81
