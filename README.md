@@ -25,6 +25,17 @@ Access the app online at: **https://gnpsrdd.streamlit.app/**
 - Python 3.11+
 - pip
 
+## Deployment
+
+To deploy the app using Docker:
+
+```bash
+# Build and start services in detached mode
+./deploy.sh
+```
+
+This script builds the Docker images and starts the services defined in `docker-compose.deployment.yaml`.
+
 ## Local Development
 
 To run the app locally:
