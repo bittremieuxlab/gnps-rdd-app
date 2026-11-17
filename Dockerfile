@@ -11,9 +11,13 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 
-COPY ./requirements.txt /app/requirements.txt
+# Install the exact versions listed in requirements.lock, so every build of
+# this commit contains the same packages. See the header of that file for how
+# to regenerate it; REQUIREMENTS=requirements.txt builds unpinned for that.
+ARG REQUIREMENTS=requirements.lock
+COPY ./requirements.txt ./requirements.lock /app/
 
-RUN pip3 install -r requirements.txt
+RUN pip3 install -r ${REQUIREMENTS}
 
 COPY . /app
 
